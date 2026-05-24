@@ -12,24 +12,22 @@ export default function Login() {
   const { toast } = useToast()
 
   const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    try {
-      const params = new URLSearchParams()
-      params.append('username', email)
-      params.append('password', password)
-      const res = await api.post('/auth/login', params, {
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      })
-      const token = res.data.access_token
-      localStorage.setItem('admin_token', token)
-      navigate('/')
-    } catch {
-      toast('Invalid credentials', 'error')
-    } finally {
-      setLoading(false)
-    }
+  e.preventDefault()
+  setLoading(true)
+  try {
+    const res = await api.post('/auth/login', {
+      email: email,
+      password: password,
+    })
+    const token = res.data.access_token
+    localStorage.setItem('admin_token', token)
+    navigate('/')
+  } catch {
+    toast('Invalid credentials', 'error')
+  } finally {
+    setLoading(false)
   }
+}
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
