@@ -8,6 +8,8 @@ import UsersPage from './pages/Users'
 import BillsPage from './pages/Bills'
 import EmailAccountsPage from './pages/EmailAccounts'
 import ProvidersPage from './pages/Providers'
+import NotificationsPage from './pages/Notifications'
+import LogsPage from './pages/Logs'
 import SystemPage from './pages/System'
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
                     <Route path="/bills" element={<BillsPage />} />
                     <Route path="/email-accounts" element={<EmailAccountsPage />} />
                     <Route path="/providers" element={<ProvidersPage />} />
+                    <Route path="/notifications" element={<NotificationsPage />} />
+                    <Route path="/logs" element={<LogsPage />} />
                     <Route path="/system" element={<SystemPage />} />
                   </Routes>
                 </Layout>

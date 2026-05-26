@@ -7,6 +7,8 @@ import {
   Mail,
   Boxes,
   Settings,
+  Bell,
+  Terminal,
   LogOut,
   Menu,
   X,
@@ -18,6 +20,8 @@ const navItems = [
   { to: '/bills', label: 'Bills', icon: FileText },
   { to: '/email-accounts', label: 'Email Accounts', icon: Mail },
   { to: '/providers', label: 'Providers', icon: Boxes },
+  { to: '/notifications', label: 'Notifications', icon: Bell },
+  { to: '/logs', label: 'Live Logs', icon: Terminal },
   { to: '/system', label: 'System', icon: Settings },
 ]
 
